@@ -1,0 +1,89 @@
+# Corpus definition for RxClarify.
+#
+# Each entry is a generic name searched against openFDA's `openfda.generic_name`
+# field; one prescription label is ingested per entry. The list is deliberately
+# weighted toward drugs with dense interaction sections (CYP substrates and
+# inhibitors, narrow-therapeutic-index agents, common polypharmacy), so the
+# Phase 2 gold-question set has real clinical content to ask about.
+#
+# Class groupings are metadata for humans — ingestion flattens them.
+
+anticoagulants_antiplatelets:
+  - warfarin sodium
+  - apixaban
+  - rivaroxaban
+  - dabigatran etexilate mesylate
+  - clopidogrel bisulfate
+  - ticagrelor
+
+statins:
+  - atorvastatin calcium
+  - simvastatin
+  - rosuvastatin calcium
+  - pravastatin sodium
+
+antidepressants:
+  - sertraline hydrochloride
+  - fluoxetine hydrochloride
+  - paroxetine hydrochloride
+  - escitalopram oxalate
+  - venlafaxine hydrochloride
+  - duloxetine hydrochloride
+  - bupropion hydrochloride
+
+antimicrobials:
+  - clarithromycin
+  - erythromycin
+  - azithromycin
+  - fluconazole
+  - itraconazole
+  - voriconazole
+  - ciprofloxacin hydrochloride
+
+diabetes:
+  - metformin hydrochloride
+  - empagliflozin
+  - dapagliflozin
+  - glipizide
+  - sitagliptin phosphate
+
+gastrointestinal:
+  - omeprazole
+  - pantoprazole sodium
+  - ondansetron hydrochloride
+
+opioids:
+  - oxycodone hydrochloride
+  - hydromorphone hydrochloride
+  - tramadol hydrochloride
+  - morphine sulfate
+
+benzodiazepines:
+  - alprazolam
+  - lorazepam
+  - clonazepam
+  - diazepam
+
+narrow_therapeutic_index:
+  - levothyroxine sodium
+  - methotrexate
+  - lithium carbonate
+  - amiodarone hydrochloride
+  - digoxin
+  - phenytoin sodium
+  - carbamazepine
+  - tacrolimus
+
+cardiovascular:
+  - lisinopril
+  - amlodipine besylate
+  - metoprolol tartrate
+  - furosemide
+  - spironolactone
+
+other:
+  - allopurinol
+  - colchicine
+  - prednisone
+  - gabapentin
+  - quetiapine fumarate

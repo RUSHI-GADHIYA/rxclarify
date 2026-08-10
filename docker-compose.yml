@@ -1,0 +1,23 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: rxclarify-db
+    environment:
+      POSTGRES_USER: rx
+      POSTGRES_PASSWORD: rx
+      POSTGRES_DB: rxclarify
+    ports:
+      # 5433 on the host so this never collides with a local Postgres on 5432.
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Runs once, only when the data volume is empty.
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rx -d rxclarify"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  pgdata:
