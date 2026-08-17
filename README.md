@@ -13,6 +13,14 @@ label text, cites the supporting excerpt inline, and says
 > **Data:** public [openFDA](https://open.fda.gov/apis/drug/label/) prescription
 > labels only. No patient data of any kind. Not clinical advice.
 
+![The RxClarify UI: a question box, a slider for how many excerpts to retrieve, a collapsible panel of retrieved excerpts, and the five acceptance questions as one-click examples.](docs/ui.png)
+
+One command — `python app.py` — starts Docker, brings up the database, checks the
+corpus, and opens this. Answers appear below the question with their `[Cn]`
+citations, alongside a colour-coded status line: green when the answer is
+grounded, amber when the assistant correctly refuses, red if it ever cites an
+excerpt it was not shown.
+
 ## Why this exists
 
 Pharmacy staff cross-check interactions and dosing across scattered PDFs and
@@ -143,9 +151,6 @@ python app.py                         # everything else is automatic
 `app.py` starts Docker if it is stopped, brings up the database, offers to build
 the corpus if it is empty, and opens the UI in your browser. On Windows,
 `run.bat` does the same by double-click.
-
-<!-- TODO: add a screenshot or short GIF of the UI here — this is the demo
-     artifact a reviewer looks for first. -->
 
 ### Or drive it from the command line
 
