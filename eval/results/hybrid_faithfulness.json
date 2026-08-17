@@ -1,0 +1,1648 @@
+{
+ "config": "hybrid",
+ "judge_model": "gpt-5.6-terra",
+ "judged": 40,
+ "run_at": "2026-08-17T00:01:15+00:00",
+ "faithfulness_mean": 0.99375,
+ "answers_fully_faithful": 39,
+ "total_claims": 206,
+ "approx_judge_cost_usd": 0.624,
+ "per_answer": [
+  {
+   "faithfulness": 1.0,
+   "n_claims": 1,
+   "n_supported": 1,
+   "claims": [
+    "Perform regular monitoring of INR in all patients treated with warfarin sodium."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly stated in boxed warning."
+    }
+   ],
+   "id": "q001"
+  },
+  {
+   "faithfulness": 0.75,
+   "n_claims": 4,
+   "n_supported": 3,
+   "claims": [
+    "Antidepressants increased the risk of suicidal thoughts and behavior in children.",
+    "Antidepressants increased the risk of suicidal thoughts and behavior in adolescents.",
+    "Antidepressants increased the risk of suicidal thoughts and behavior in young adults.",
+    "The fluoxetine boxed warning specifies young adults as under age 25."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly stated in boxed warning."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly stated in boxed warning."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Explicitly stated in boxed warning."
+    },
+    {
+     "claim_index": 3,
+     "supported": false,
+     "why": "Does not define young adults under 25."
+    }
+   ],
+   "id": "q002"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 7,
+   "n_supported": 7,
+   "claims": [
+    "Presenting symptoms include malaise.",
+    "Presenting symptoms include myalgias.",
+    "Presenting symptoms include respiratory distress.",
+    "Presenting symptoms include somnolence or increased somnolence.",
+    "Presenting symptoms include abdominal pain.",
+    "Severe acidosis may involve hypotension.",
+    "Severe acidosis may involve resistant bradyarrhythmias."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Malaise listed among nonspecific symptoms."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Myalgias listed among nonspecific symptoms."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Respiratory distress is explicitly listed."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Somnolence and increased somnolence listed."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Abdominal pain is explicitly listed."
+    },
+    {
+     "claim_index": 5,
+     "supported": true,
+     "why": "Hypotension occurs with severe acidosis."
+    },
+    {
+     "claim_index": 6,
+     "supported": true,
+     "why": "Resistant bradyarrhythmias occur with severe acidosis."
+    }
+   ],
+   "id": "q003"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 5,
+   "n_supported": 5,
+   "claims": [
+    "Levothyroxine should not be used to treat obesity.",
+    "Levothyroxine should not be used for weight loss.",
+    "In euthyroid patients, usual replacement doses of levothyroxine are ineffective for weight reduction.",
+    "Higher doses of levothyroxine may cause serious toxicity.",
+    "Higher doses of levothyroxine may cause life-threatening toxicity."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicit boxed warning against obesity treatment"
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicit boxed warning against weight loss"
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Daily hormonal doses ineffective in euthyroid patients"
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Larger doses may cause serious toxicity"
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Larger doses may cause life-threatening toxicity"
+    }
+   ],
+   "id": "q004"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 4,
+   "n_supported": 4,
+   "claims": [
+    "HLA-B*1502 is strongly associated with serious dermatologic reactions in patients treated with carbamazepine.",
+    "HLA-B*1502 is strongly associated with SJS/TEN in patients treated with carbamazepine.",
+    "HLA-A*3101 has a moderate association with hypersensitivity reactions.",
+    "HLA-A*3101 has a moderate association with SJS/TEN."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Strong association with carbamazepine SJS/TEN stated"
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly stated for carbamazepine-treated patients"
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Moderate association explicitly stated"
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Hypersensitivity reactions include SJS/TEN"
+    }
+   ],
+   "id": "q005"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 1,
+   "n_supported": 1,
+   "claims": [
+    "Quetiapine is not approved for elderly patients with dementia-related psychosis."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly stated in boxed warning."
+    }
+   ],
+   "id": "q006"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 5,
+   "n_supported": 5,
+   "claims": [
+    "Dabigatran (PRADAXA) is contraindicated in patients with mechanical prosthetic heart valves.",
+    "In RE-ALIGN, dabigatran was associated with more thromboembolic events than warfarin.",
+    "In RE-ALIGN, dabigatran was associated with more major bleeding than warfarin.",
+    "Dabigatran use is contraindicated regardless of whether a mechanical prosthetic heart valve was recently implanted.",
+    "Dabigatran use is contraindicated regardless of whether a mechanical prosthetic heart valve was implanted more than three months earlier."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicit contraindication for mechanical prosthetic valves."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "More thromboembolic events than warfarin reported."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Excess major bleeding versus warfarin reported."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Events occurred in recently implanted valve patients."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Events occurred over three months post-implantation."
+    }
+   ],
+   "id": "q007"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 5,
+   "n_supported": 5,
+   "claims": [
+    "Lovastatin is contraindicated with clarithromycin.",
+    "Simvastatin is contraindicated with clarithromycin.",
+    "Clarithromycin increases the risk of myopathy with lovastatin.",
+    "Clarithromycin increases the risk of myopathy with simvastatin.",
+    "The myopathy risk includes rhabdomyolysis."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly listed as contraindicated."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly listed as contraindicated."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Increased concentration raises myopathy risk."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Increased concentration raises myopathy risk."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Myopathy explicitly includes rhabdomyolysis."
+    }
+   ],
+   "id": "q008"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 3,
+   "n_supported": 3,
+   "claims": [
+    "Hydromorphone is contraindicated in patients with known gastrointestinal obstruction.",
+    "Hydromorphone is contraindicated in patients with suspected gastrointestinal obstruction.",
+    "Hydromorphone is contraindicated in patients with paralytic ileus."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly contraindicated for known obstruction."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly contraindicated for suspected obstruction."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Explicitly includes paralytic ileus."
+    }
+   ],
+   "id": "q009"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 5,
+   "n_supported": 5,
+   "claims": [
+    "Sinus bradycardia contraindicates intravenous phenytoin.",
+    "Sinoatrial block contraindicates intravenous phenytoin.",
+    "Second-degree atrioventricular block contraindicates intravenous phenytoin.",
+    "Third-degree atrioventricular block contraindicates intravenous phenytoin.",
+    "Adams\u2013Stokes syndrome contraindicates intravenous phenytoin."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Listed as a contraindication."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Sino-atrial block is contraindicated."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Second-degree A-V block is contraindicated."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Third-degree A-V block is contraindicated."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Adams-Stokes syndrome is contraindicated."
+    }
+   ],
+   "id": "q010"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 2,
+   "n_supported": 2,
+   "claims": [
+    "Acute liver failure contraindicates rosuvastatin.",
+    "Decompensated cirrhosis contraindicates rosuvastatin."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly listed as rosuvastatin contraindication."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly listed as rosuvastatin contraindication."
+    }
+   ],
+   "id": "q011"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 15,
+   "n_supported": 15,
+   "claims": [
+    "Amiodarone is contraindicated in patients with known hypersensitivity to amiodarone components, including iodine.",
+    "Hypersensitivity reactions to amiodarone may include rash.",
+    "Hypersensitivity reactions to amiodarone may include angioedema.",
+    "Hypersensitivity reactions to amiodarone may include bleeding.",
+    "Hypersensitivity reactions to amiodarone may include fever.",
+    "Hypersensitivity reactions to amiodarone may include arthralgias.",
+    "Hypersensitivity reactions to amiodarone may include eosinophilia.",
+    "Hypersensitivity reactions to amiodarone may include urticaria.",
+    "Hypersensitivity reactions to amiodarone may include thrombotic thrombocytopenic purpura.",
+    "Hypersensitivity reactions to amiodarone may include severe periarteritis.",
+    "Intravenous amiodarone has been associated with anaphylactic/anaphylactoid reactions.",
+    "Anaphylactic/anaphylactoid reactions associated with intravenous amiodarone may include hypotension.",
+    "Anaphylactic/anaphylactoid reactions associated with intravenous amiodarone may include hypoxia.",
+    "Anaphylactic/anaphylactoid reactions associated with intravenous amiodarone may include shock.",
+    "Anaphylactic/anaphylactoid reactions associated with intravenous amiodarone may include cardiac arrest."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicit contraindication including iodine hypersensitivity."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Rash listed as hypersensitivity manifestation."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Angioedema explicitly listed."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Cutaneous/mucosal hemorrhage listed as bleeding."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Fever explicitly listed."
+    },
+    {
+     "claim_index": 5,
+     "supported": true,
+     "why": "Arthralgias explicitly listed."
+    },
+    {
+     "claim_index": 6,
+     "supported": true,
+     "why": "Eosinophilia explicitly listed."
+    },
+    {
+     "claim_index": 7,
+     "supported": true,
+     "why": "Urticaria explicitly listed."
+    },
+    {
+     "claim_index": 8,
+     "supported": true,
+     "why": "Thrombotic thrombocytopenic purpura explicitly listed."
+    },
+    {
+     "claim_index": 9,
+     "supported": true,
+     "why": "Severe periarteritis explicitly listed."
+    },
+    {
+     "claim_index": 10,
+     "supported": true,
+     "why": "Reported with intravenous amiodarone."
+    },
+    {
+     "claim_index": 11,
+     "supported": true,
+     "why": "Hypotension listed among manifestations."
+    },
+    {
+     "claim_index": 12,
+     "supported": true,
+     "why": "Hypoxia listed among manifestations."
+    },
+    {
+     "claim_index": 13,
+     "supported": true,
+     "why": "Shock explicitly reported."
+    },
+    {
+     "claim_index": 14,
+     "supported": true,
+     "why": "Cardiac arrest explicitly reported."
+    }
+   ],
+   "id": "q012"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 2,
+   "n_supported": 2,
+   "claims": [
+    "For nonvalvular atrial fibrillation, the dose is 20 mg once daily with the evening meal if CrCl >50 mL/min.",
+    "For nonvalvular atrial fibrillation, the dose is 15 mg once daily with food if CrCl \u226450 mL/min."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Table states 20 mg evening meal if CrCl >50."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "AF dosing lists 15 mg once daily with food."
+    }
+   ],
+   "id": "q013"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 2,
+   "n_supported": 2,
+   "claims": [
+    "A single 300 mg oral loading dose is used when an antiplatelet effect is needed within hours in acute coronary syndrome.",
+    "The loading dose is followed by 75 mg once daily."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicit ACS dosing when effect needed within hours"
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "300 mg loading followed by 75 mg daily"
+    }
+   ],
+   "id": "q014"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 2,
+   "n_supported": 2,
+   "claims": [
+    "The maximum recommended daily dose of simvastatin is 40 mg.",
+    "Simvastatin is taken orally once daily in the evening."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Maximum recommended dosage is 40 mg daily."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Taken orally once daily in evening."
+    }
+   ],
+   "id": "q015"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 2,
+   "n_supported": 2,
+   "claims": [
+    "The intravenous loading dose for invasive aspergillosis in adults is 6 mg/kg every 12 hours for the first 24 hours.",
+    "The intravenous loading dose for invasive aspergillosis in pediatric patients is 9 mg/kg every 12 hours for the first 24 hours."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Adult dosing table states exactly this."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Pediatric table states exactly this."
+    }
+   ],
+   "id": "q016"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 2,
+   "n_supported": 2,
+   "claims": [
+    "Obtain the serum lithium concentration assay after 3 days of treatment.",
+    "Draw the sample 12 hours after the last oral dose."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly instructed after 3 days."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly states 12 hours after dose."
+    }
+   ],
+   "id": "q017"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 3,
+   "n_supported": 3,
+   "claims": [
+    "For gout in patients with normal kidney function, initiate allopurinol at 100 mg orally once daily.",
+    "Increase allopurinol by 100 mg weekly until serum uric acid is \u22646 mg/dL.",
+    "The maximum allopurinol dose is 800 mg daily."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicit gout initial dosage stated."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Weekly titration to 6 mg/dL stated."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Maximum 800 mg daily explicitly stated."
+    }
+   ],
+   "id": "q018"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 1,
+   "n_supported": 1,
+   "claims": [
+    "750 mg/day"
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Adult schizophrenia maximum dose is 750 mg/day."
+    }
+   ],
+   "id": "q019"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 3,
+   "n_supported": 3,
+   "claims": [
+    "Cyclosporine should be avoided with atorvastatin.",
+    "Tipranavir plus ritonavir should be avoided with atorvastatin.",
+    "Glecaprevir plus pibrentasvir should be avoided with atorvastatin."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Table says avoid atorvastatin with cyclosporine."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Table says avoid atorvastatin with tipranavir/ritonavir."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Table says avoid atorvastatin with glecaprevir/pibrentasvir."
+    }
+   ],
+   "id": "q020"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 4,
+   "n_supported": 4,
+   "claims": [
+    "Erythromycin may increase simvastatin concentrations.",
+    "Concomitant use of erythromycin and simvastatin has been associated with rare reports of rhabdomyolysis.",
+    "Serious adverse reactions have been reported with concomitant erythromycin and simvastatin use.",
+    "Rhabdomyolysis has been reported with concomitant erythromycin and simvastatin use."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Erythromycin increases HMG-CoA inhibitor concentrations."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Rare rhabdomyolysis reports noted with concomitant use."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Serious reactions include rhabdomyolysis with simvastatin."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Context explicitly reports rhabdomyolysis with simvastatin."
+    }
+   ],
+   "id": "q021"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 3,
+   "n_supported": 3,
+   "claims": [
+    "Concomitant azithromycin may potentiate the effects of warfarin.",
+    "Concomitant azithromycin may increase coagulation times.",
+    "Prothrombin time should be carefully monitored during concomitant use."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Postmarketing reports suggest potentiation of warfarin effects."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Azithromycin use may increase coagulation times."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Careful prothrombin monitoring is explicitly recommended."
+    }
+   ],
+   "id": "q022"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 9,
+   "n_supported": 9,
+   "claims": [
+    "Combining alprazolam with an opioid may cause profound sedation.",
+    "Combining alprazolam with an opioid may cause respiratory depression.",
+    "Combining alprazolam with an opioid may cause coma.",
+    "Combining alprazolam with an opioid may cause death.",
+    "Combining alprazolam with an opioid increases drug-related mortality compared with opioid use alone.",
+    "Reserve concomitant use for cases in which alternatives are inadequate.",
+    "Use the lowest effective doses for the minimum duration.",
+    "Closely monitor for sedation.",
+    "Closely monitor for respiratory depression."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Warning explicitly lists profound sedation."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Warning explicitly lists respiratory depression."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Warning explicitly lists coma."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Warning explicitly lists death."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Observational studies explicitly report increased mortality."
+    },
+    {
+     "claim_index": 5,
+     "supported": true,
+     "why": "Reserve use when alternatives are inadequate."
+    },
+    {
+     "claim_index": 6,
+     "supported": true,
+     "why": "Lowest doses and minimum durations specified."
+    },
+    {
+     "claim_index": 7,
+     "supported": true,
+     "why": "Follow closely for sedation signs."
+    },
+    {
+     "claim_index": 8,
+     "supported": true,
+     "why": "Follow closely for respiratory depression signs."
+    }
+   ],
+   "id": "q023"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 1,
+   "n_supported": 1,
+   "claims": [
+    "When taken with amlodipine, simvastatin should not exceed 20 mg once daily."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicit 20 mg daily limit stated"
+    }
+   ],
+   "id": "q024"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 2,
+   "n_supported": 2,
+   "claims": [
+    "Colchicine interactions involve the efflux transporter P-glycoprotein (P-gp).",
+    "Colchicine interactions primarily involve the metabolizing enzyme CYP3A4."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Colchicine is a P-gp substrate."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "CYP3A4 mainly metabolizes colchicine."
+    }
+   ],
+   "id": "q025"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 17,
+   "n_supported": 17,
+   "claims": [
+    "Coadministration of gabapentin with opioids may cause respiratory depression.",
+    "Coadministration of gabapentin with opioids may cause sedation.",
+    "Respiratory depression and sedation from gabapentin-opioid coadministration have sometimes resulted in death.",
+    "With morphine, monitor for somnolence.",
+    "With morphine, monitor for sedation.",
+    "With morphine, monitor for respiratory depression.",
+    "Morphine may increase gabapentin concentrations.",
+    "Increased gabapentin concentrations may require dose adjustment.",
+    "Gabapentin decreases hydrocodone exposure.",
+    "Changes in hydrocodone exposure should be considered when gabapentin is started.",
+    "Changes in hydrocodone effect should be considered when gabapentin is started.",
+    "Changes in hydrocodone exposure should be considered when gabapentin is discontinued.",
+    "Changes in hydrocodone effect should be considered when gabapentin is discontinued.",
+    "When co-prescribing gabapentin with an opioid, monitor for respiratory depression.",
+    "When co-prescribing gabapentin with an opioid, monitor for sedation.",
+    "When co-prescribing gabapentin with an opioid, consider initiating gabapentin at a low dose.",
+    "Consider initiating gabapentin at a low dose particularly in patients with underlying respiratory impairment."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly reported with opioid coadministration."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly reported with opioid coadministration."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Sedation and respiratory depression sometimes caused death."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Morphine section specifies somnolence monitoring."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Morphine section specifies sedation monitoring."
+    },
+    {
+     "claim_index": 5,
+     "supported": true,
+     "why": "Morphine section specifies respiratory depression monitoring."
+    },
+    {
+     "claim_index": 6,
+     "supported": true,
+     "why": "Morphine may increase gabapentin concentrations."
+    },
+    {
+     "claim_index": 7,
+     "supported": true,
+     "why": "Increased concentrations may require dose adjustment."
+    },
+    {
+     "claim_index": 8,
+     "supported": true,
+     "why": "Explicitly states decreased hydrocodone exposure."
+    },
+    {
+     "claim_index": 9,
+     "supported": true,
+     "why": "Consider exposure alteration when gabapentin starts."
+    },
+    {
+     "claim_index": 10,
+     "supported": true,
+     "why": "Consider effect alteration when gabapentin starts."
+    },
+    {
+     "claim_index": 11,
+     "supported": true,
+     "why": "Consider exposure alteration when gabapentin stops."
+    },
+    {
+     "claim_index": 12,
+     "supported": true,
+     "why": "Consider effect alteration when gabapentin stops."
+    },
+    {
+     "claim_index": 13,
+     "supported": true,
+     "why": "Monitor when co-prescribing with an opioid."
+    },
+    {
+     "claim_index": 14,
+     "supported": true,
+     "why": "Monitor sedation with opioid co-prescribing."
+    },
+    {
+     "claim_index": 15,
+     "supported": true,
+     "why": "Consider low-dose gabapentin with opioid."
+    },
+    {
+     "claim_index": 16,
+     "supported": true,
+     "why": "Low dose considered with respiratory impairment."
+    }
+   ],
+   "id": "q026"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 3,
+   "n_supported": 3,
+   "claims": [
+    "Rivaroxaban (XARELTO) is indicated for prophylaxis of deep vein thrombosis (DVT) in adults undergoing knee replacement surgery.",
+    "Rivaroxaban (XARELTO) is indicated for prophylaxis of deep vein thrombosis (DVT) in adults undergoing hip replacement surgery.",
+    "Deep vein thrombosis (DVT) may lead to pulmonary embolism (PE)."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicit indication for knee replacement adults."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicit indication for hip replacement adults."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Context states DVT may lead to PE."
+    }
+   ],
+   "id": "q027"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 2,
+   "n_supported": 2,
+   "claims": [
+    "Treatment of major depressive disorder (MDD).",
+    "Prevention of seasonal major depressive episodes in patients diagnosed with seasonal affective disorder (SAD)."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Indicated for treatment of MDD."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Indicated for prevention in SAD patients."
+    }
+   ],
+   "id": "q028"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 11,
+   "n_supported": 11,
+   "claims": [
+    "Oral fluconazole is indicated to treat vaginal candidiasis.",
+    "Oral fluconazole is indicated to treat oropharyngeal candidiasis.",
+    "Oral fluconazole is indicated to treat esophageal candidiasis.",
+    "Fluconazole has been used for Candida urinary tract infections.",
+    "Fluconazole has been used for Candida peritonitis.",
+    "Fluconazole has been used for systemic Candida infections.",
+    "Systemic Candida infections include candidemia.",
+    "Systemic Candida infections include disseminated candidiasis.",
+    "Systemic Candida infections include Candida pneumonia.",
+    "These uses were supported by open, noncomparative studies.",
+    "These studies included relatively small patient numbers."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly indicated for vaginal candidiasis."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly indicated for oropharyngeal candidiasis."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Explicitly indicated for esophageal candidiasis."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Effective in Candida urinary tract infections."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Effective for Candida peritonitis."
+    },
+    {
+     "claim_index": 5,
+     "supported": true,
+     "why": "Effective for systemic Candida infections."
+    },
+    {
+     "claim_index": 6,
+     "supported": true,
+     "why": "Systemic infections explicitly include candidemia."
+    },
+    {
+     "claim_index": 7,
+     "supported": true,
+     "why": "Systemic infections explicitly include disseminated candidiasis."
+    },
+    {
+     "claim_index": 8,
+     "supported": true,
+     "why": "Systemic infections explicitly include pneumonia."
+    },
+    {
+     "claim_index": 9,
+     "supported": true,
+     "why": "Uses described in open noncomparative studies."
+    },
+    {
+     "claim_index": 10,
+     "supported": true,
+     "why": "Studies involved relatively small patient numbers."
+    }
+   ],
+   "id": "q029"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 3,
+   "n_supported": 3,
+   "claims": [
+    "Extended-release morphine tablets are indicated for managing severe and persistent pain requiring an opioid analgesic.",
+    "Alternative options, including immediate-release opioids, must be ineffective, not tolerated, or otherwise inadequate.",
+    "Extended-release morphine tablets are not indicated for as-needed (PRN) analgesia."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Indicated for severe persistent opioid-requiring pain."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Alternative options must be ineffective or inadequate."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Explicitly not indicated as PRN analgesic."
+    }
+   ],
+   "id": "q030"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 1,
+   "n_supported": 1,
+   "claims": [
+    "Lisinopril is indicated for hypertension in children 6 years of age and older."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Indicated for pediatric patients 6 years and older."
+    }
+   ],
+   "id": "q031"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 10,
+   "n_supported": 10,
+   "claims": [
+    "Simvastatin is indicated to reduce the risk of total mortality in certain high-risk adults.",
+    "Simvastatin reduces the risk of coronary heart disease death.",
+    "Simvastatin reduces the risk of nonfatal myocardial infarction.",
+    "Simvastatin reduces the risk of stroke.",
+    "Simvastatin reduces the need for coronary revascularization procedures.",
+    "Simvastatin reduces the need for noncoronary revascularization procedures.",
+    "The indication applies to high-risk adults with established coronary heart disease.",
+    "The indication applies to high-risk adults with cerebrovascular disease.",
+    "The indication applies to high-risk adults with peripheral vascular disease.",
+    "The indication applies to high-risk adults with diabetes."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Indicated to reduce total mortality in high-risk adults."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly reduces coronary heart disease death risk."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Explicitly reduces non-fatal myocardial infarction risk."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Explicitly reduces stroke risk."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Explicitly reduces need for coronary revascularization."
+    },
+    {
+     "claim_index": 5,
+     "supported": true,
+     "why": "Explicitly reduces need for non-coronary revascularization."
+    },
+    {
+     "claim_index": 6,
+     "supported": true,
+     "why": "Includes adults with established coronary heart disease."
+    },
+    {
+     "claim_index": 7,
+     "supported": true,
+     "why": "Includes adults with cerebrovascular disease."
+    },
+    {
+     "claim_index": 8,
+     "supported": true,
+     "why": "Includes adults with peripheral vascular disease."
+    },
+    {
+     "claim_index": 9,
+     "supported": true,
+     "why": "Includes adults with diabetes."
+    }
+   ],
+   "id": "q032"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 6,
+   "n_supported": 6,
+   "claims": [
+    "Avoid rivaroxaban in patients with moderate (Child-Pugh B) hepatic impairment.",
+    "Avoid rivaroxaban in patients with severe (Child-Pugh C) hepatic impairment.",
+    "Avoid rivaroxaban in patients with hepatic disease associated with coagulopathy.",
+    "Rivaroxaban exposure may be increased in patients with moderate or severe hepatic impairment.",
+    "Bleeding risk may be increased in patients with moderate or severe hepatic impairment.",
+    "No clinical data are available for pediatric patients with hepatic impairment."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly advises avoiding Child-Pugh B."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly advises avoiding Child-Pugh C."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Explicitly advises avoidance with coagulopathy."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Exposure increased in moderate impairment; severe unevaluated."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "States exposure and bleeding risk may increase."
+    },
+    {
+     "claim_index": 5,
+     "supported": true,
+     "why": "Explicitly states no pediatric clinical data."
+    }
+   ],
+   "id": "q033"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 2,
+   "n_supported": 2,
+   "claims": [
+    "Discontinue simvastatin when pregnancy is recognized.",
+    "Consider the patient\u2019s ongoing therapeutic needs."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly stated in simvastatin pregnancy summary."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Alternative recommendation explicitly stated."
+    }
+   ],
+   "id": "q034"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 23,
+   "n_supported": 23,
+   "claims": [
+    "Third-trimester venlafaxine exposure may increase the risk of poor neonatal adaptation.",
+    "Poor neonatal adaptation may include respiratory distress.",
+    "Poor neonatal adaptation may include temperature instability.",
+    "Poor neonatal adaptation may include feeding difficulty.",
+    "Poor neonatal adaptation may include hypotonia.",
+    "Poor neonatal adaptation may include tremor.",
+    "Poor neonatal adaptation may include irritability.",
+    "Reported neonatal complications include cyanosis.",
+    "Reported neonatal complications include apnea.",
+    "Reported neonatal complications include seizures.",
+    "Reported neonatal complications include vomiting.",
+    "Reported neonatal complications include hypoglycemia.",
+    "Reported neonatal complications include hypertonia.",
+    "Reported neonatal complications include hyperreflexia.",
+    "Reported neonatal complications include jitteriness.",
+    "Reported neonatal complications include constant crying.",
+    "Some cases require prolonged hospitalization.",
+    "Some cases require respiratory support.",
+    "Some cases require tube feeding.",
+    "These findings may reflect direct SNRI toxicity.",
+    "These findings may reflect drug discontinuation syndrome.",
+    "Some cases are consistent with serotonin syndrome.",
+    "Neonates exposed in the third trimester should be monitored for drug discontinuation syndrome."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly stated in pregnancy section"
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Listed as poor neonatal adaptation symptom"
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Listed as poor neonatal adaptation symptom"
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Listed as poor neonatal adaptation symptom"
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Listed as poor neonatal adaptation symptom"
+    },
+    {
+     "claim_index": 5,
+     "supported": true,
+     "why": "Listed as poor neonatal adaptation symptom"
+    },
+    {
+     "claim_index": 6,
+     "supported": true,
+     "why": "Listed as poor neonatal adaptation symptom"
+    },
+    {
+     "claim_index": 7,
+     "supported": true,
+     "why": "Cyanosis is a reported clinical finding"
+    },
+    {
+     "claim_index": 8,
+     "supported": true,
+     "why": "Apnea is a reported clinical finding"
+    },
+    {
+     "claim_index": 9,
+     "supported": true,
+     "why": "Seizures are a reported clinical finding"
+    },
+    {
+     "claim_index": 10,
+     "supported": true,
+     "why": "Vomiting is a reported clinical finding"
+    },
+    {
+     "claim_index": 11,
+     "supported": true,
+     "why": "Hypoglycemia is a reported clinical finding"
+    },
+    {
+     "claim_index": 12,
+     "supported": true,
+     "why": "Hypertonia is a reported clinical finding"
+    },
+    {
+     "claim_index": 13,
+     "supported": true,
+     "why": "Hyperreflexia is a reported clinical finding"
+    },
+    {
+     "claim_index": 14,
+     "supported": true,
+     "why": "Jitteriness is a reported clinical finding"
+    },
+    {
+     "claim_index": 15,
+     "supported": true,
+     "why": "Constant crying is a reported clinical finding"
+    },
+    {
+     "claim_index": 16,
+     "supported": true,
+     "why": "Complications required prolonged hospitalization"
+    },
+    {
+     "claim_index": 17,
+     "supported": true,
+     "why": "Complications required respiratory support"
+    },
+    {
+     "claim_index": 18,
+     "supported": true,
+     "why": "Complications required tube feeding"
+    },
+    {
+     "claim_index": 19,
+     "supported": true,
+     "why": "Findings may be direct SNRI toxicity"
+    },
+    {
+     "claim_index": 20,
+     "supported": true,
+     "why": "Findings may be discontinuation syndrome"
+    },
+    {
+     "claim_index": 21,
+     "supported": true,
+     "why": "Some clinical pictures consistent with serotonin syndrome"
+    },
+    {
+     "claim_index": 22,
+     "supported": true,
+     "why": "Explicit monitoring recommendation for third-trimester exposure"
+    }
+   ],
+   "id": "q035"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 9,
+   "n_supported": 9,
+   "claims": [
+    "Elderly patients may be more susceptible to clarithromycin-associated QT-interval effects.",
+    "Elderly patients may be more susceptible to clarithromycin-associated torsades de pointes arrhythmias.",
+    "Clarithromycin should be avoided in patients with QT prolongation.",
+    "Clarithromycin should be avoided in patients with ventricular arrhythmias.",
+    "Clarithromycin should be avoided in patients with significant bradycardia.",
+    "Clarithromycin should be avoided in patients with electrolyte abnormalities.",
+    "Clarithromycin should be avoided in patients taking QT-prolonging drugs.",
+    "Clarithromycin should be avoided in patients taking class IA antiarrhythmics.",
+    "Clarithromycin should be avoided in patients taking class III antiarrhythmics."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Elderly more susceptible to QT effects."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly states elderly torsades susceptibility."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Avoid in known QT prolongation."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Avoid in ventricular cardiac arrhythmia."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Avoid with clinically significant bradycardia."
+    },
+    {
+     "claim_index": 5,
+     "supported": true,
+     "why": "Avoid uncorrected hypokalemia or hypomagnesemia."
+    },
+    {
+     "claim_index": 6,
+     "supported": true,
+     "why": "Avoid drugs known to prolong QT."
+    },
+    {
+     "claim_index": 7,
+     "supported": true,
+     "why": "Avoid patients receiving Class IA agents."
+    },
+    {
+     "claim_index": 8,
+     "supported": true,
+     "why": "Avoid patients receiving Class III agents."
+    }
+   ],
+   "id": "q036"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 9,
+   "n_supported": 9,
+   "claims": [
+    "Breastfeeding is generally not recommended during ciprofloxacin treatment.",
+    "Breastfeeding is generally not recommended for two additional days after the last ciprofloxacin dose.",
+    "Pumping and discarding milk during ciprofloxacin treatment may be considered.",
+    "Pumping and discarding milk for two additional days after the last ciprofloxacin dose may be considered.",
+    "For inhalational anthrax post-exposure treatment, continuing breastfeeding may be acceptable after an individualized risk\u2013benefit assessment.",
+    "Ciprofloxacin may alter the breastfed infant\u2019s intestinal flora.",
+    "Monitor the breastfed infant for loose stools.",
+    "Monitor the breastfed infant for bloody stools.",
+    "Monitor the breastfed infant for candidiasis."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly states breastfeeding is not recommended."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "States additional two days after last dose."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "May pump and discard during treatment."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "May discard milk two days afterward."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Anthrax context permits risk-benefit consideration."
+    },
+    {
+     "claim_index": 5,
+     "supported": true,
+     "why": "May cause infant intestinal flora alteration."
+    },
+    {
+     "claim_index": 6,
+     "supported": true,
+     "why": "Advises monitoring for loose stools."
+    },
+    {
+     "claim_index": 7,
+     "supported": true,
+     "why": "Advises monitoring for bloody stools."
+    },
+    {
+     "claim_index": 8,
+     "supported": true,
+     "why": "Advises monitoring for candidiasis."
+    }
+   ],
+   "id": "q037"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 12,
+   "n_supported": 12,
+   "claims": [
+    "Third-trimester quetiapine exposure may cause neonatal extrapyramidal symptoms.",
+    "Third-trimester quetiapine exposure may cause neonatal withdrawal symptoms.",
+    "Neonatal symptoms may include agitation.",
+    "Neonatal symptoms may include hypertonia.",
+    "Neonatal symptoms may include hypotonia.",
+    "Neonatal symptoms may include tremor.",
+    "Neonatal symptoms may include somnolence.",
+    "Neonatal symptoms may include respiratory distress.",
+    "Neonatal symptoms may include feeding disorder.",
+    "Symptoms vary in severity.",
+    "Some neonates recover within hours or days.",
+    "Some neonates require prolonged hospitalization."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Third-trimester quetiapine exposure risks extrapyramidal symptoms."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Third-trimester quetiapine exposure risks withdrawal symptoms."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Agitation is listed among neonatal symptoms."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Hypertonia is listed among neonatal symptoms."
+    },
+    {
+     "claim_index": 4,
+     "supported": true,
+     "why": "Hypotonia is listed among neonatal symptoms."
+    },
+    {
+     "claim_index": 5,
+     "supported": true,
+     "why": "Tremor is listed among neonatal symptoms."
+    },
+    {
+     "claim_index": 6,
+     "supported": true,
+     "why": "Somnolence is listed among neonatal symptoms."
+    },
+    {
+     "claim_index": 7,
+     "supported": true,
+     "why": "Respiratory distress is listed among neonatal symptoms."
+    },
+    {
+     "claim_index": 8,
+     "supported": true,
+     "why": "Feeding disorder is listed among neonatal symptoms."
+    },
+    {
+     "claim_index": 9,
+     "supported": true,
+     "why": "Symptoms are stated to vary in severity."
+    },
+    {
+     "claim_index": 10,
+     "supported": true,
+     "why": "Some recovered within hours or days."
+    },
+    {
+     "claim_index": 11,
+     "supported": true,
+     "why": "Others required prolonged hospitalization."
+    }
+   ],
+   "id": "q038"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 1,
+   "n_supported": 1,
+   "claims": [
+    "Clopidogrel should be interrupted 5 days before elective surgery with a major risk of bleeding."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly states discontinue 5 days before surgery."
+    }
+   ],
+   "id": "q039"
+  },
+  {
+   "faithfulness": 1.0,
+   "n_claims": 4,
+   "n_supported": 4,
+   "claims": [
+    "Omeprazole should be avoided with clopidogrel.",
+    "Esomeprazole should be avoided with clopidogrel.",
+    "Omeprazole significantly reduces clopidogrel's antiplatelet activity.",
+    "Esomeprazole significantly reduces clopidogrel's antiplatelet activity."
+   ],
+   "verdicts": [
+    {
+     "claim_index": 0,
+     "supported": true,
+     "why": "Explicitly advises avoiding concomitant use."
+    },
+    {
+     "claim_index": 1,
+     "supported": true,
+     "why": "Explicitly advises avoiding concomitant use."
+    },
+    {
+     "claim_index": 2,
+     "supported": true,
+     "why": "Clinical studies showed significant reduction."
+    },
+    {
+     "claim_index": 3,
+     "supported": true,
+     "why": "Similar reduction observed with esomeprazole."
+    }
+   ],
+   "id": "q040"
+  }
+ ]
+}

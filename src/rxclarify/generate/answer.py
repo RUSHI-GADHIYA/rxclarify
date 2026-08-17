@@ -1,19 +1,20 @@
-"""retrieve -> prompt -> generate -> validate citations."""
+"""Run the LCEL chain and validate what came back."""
 
 from __future__ import annotations
 
 import re
+import time
 from dataclasses import dataclass, field
 
+from langchain_core.language_models import BaseChatModel
+from langchain_core.messages import AIMessage
+from langchain_core.retrievers import BaseRetriever
+
 from rxclarify.config import get_settings
-from rxclarify.generate.prompt import (
-    PROMPT_VERSION,
-    REFUSAL_TOKEN,
-    SYSTEM_PROMPT,
-    build_user_prompt,
-)
-from rxclarify.llm.base import LLMProvider
-from rxclarify.retrieval.base import RetrievedChunk, Retriever
+from rxclarify.generate.chain import build_chain
+from rxclarify.generate.prompt import PROMPT_VERSION, REFUSAL_TOKEN
+from rxclarify.retrieval.base import RetrievedChunk
+from rxclarify.retrieval.langchain_retriever import to_chunk
 
 _CITATION = re.compile(r"\[\s*C(\d+)\s*\]", re.IGNORECASE)
 
@@ -64,37 +65,51 @@ def is_refusal(text: str) -> bool:
     return text.strip().upper().startswith(REFUSAL_TOKEN)
 
 
+def _model_name(chat_model: BaseChatModel) -> str:
+    for attr in ("model_name", "model_id", "model"):
+        value = getattr(chat_model, attr, None)
+        if isinstance(value, str) and value:
+            return value
+    return type(chat_model).__name__
+
+
 def answer_question(
     question: str,
     *,
-    retriever: Retriever,
-    provider: LLMProvider,
+    retriever: BaseRetriever,
+    chat_model: BaseChatModel,
     top_k: int | None = None,
-    max_tokens: int | None = None,
 ) -> Answer:
     settings = get_settings()
-    top_k = top_k if top_k is not None else settings.top_k
-    max_tokens = max_tokens if max_tokens is not None else settings.max_tokens
+    if top_k is not None:
+        # BaseRetriever is a pydantic model; k is a declared field on ours.
+        retriever = retriever.model_copy(update={"k": top_k})
+    elif getattr(retriever, "k", None) is None:
+        retriever = retriever.model_copy(update={"k": settings.top_k})
 
-    chunks = retriever.retrieve(question, top_k=top_k)
-    completion = provider.complete(
-        system=SYSTEM_PROMPT,
-        user=build_user_prompt(question, chunks),
-        max_tokens=max_tokens,
-    )
+    chain = build_chain(retriever, chat_model)
 
+    started = time.perf_counter()
+    result = chain.invoke(question)
+    elapsed_ms = (time.perf_counter() - started) * 1000
+
+    chunks = [to_chunk(d) for d in result["docs"]]
+    message: AIMessage = result["message"]
+    text = (message.text or "").strip()
+
+    usage = message.usage_metadata or {}
     valid_markers = {c.marker for c in chunks}
-    cited, invalid = parse_citations(completion.text, valid_markers)
+    cited, invalid = parse_citations(text, valid_markers)
 
     return Answer(
         question=question,
-        text=completion.text,
+        text=text,
         chunks=chunks,
         cited_markers=cited,
         invalid_markers=invalid,
-        refused=is_refusal(completion.text),
-        model=completion.model,
-        input_tokens=completion.input_tokens,
-        output_tokens=completion.output_tokens,
-        latency_ms=completion.latency_ms,
+        refused=is_refusal(text),
+        model=_model_name(chat_model),
+        input_tokens=usage.get("input_tokens"),
+        output_tokens=usage.get("output_tokens"),
+        latency_ms=elapsed_ms,
     )

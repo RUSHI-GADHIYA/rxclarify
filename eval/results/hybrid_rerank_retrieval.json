@@ -1,0 +1,632 @@
+{
+ "config": "hybrid_rerank",
+ "mode": "retrieval",
+ "top_k": 3,
+ "model": null,
+ "run_at": "2026-08-17T00:03:02+00:00",
+ "questions": 61,
+ "retrieval": {
+  "recall@3": 0.8695652173913043,
+  "mrr": 0.7028985507246377,
+  "ndcg@3": 0.7458542942546648,
+  "precision@3": 0.28985507246376807,
+  "mean_retrieved": 3.0,
+  "n": 46
+ },
+ "latency_ms": {
+  "p50": 1341.9969999813475,
+  "p95": 1540.489399980288
+ },
+ "per_question": [
+  {
+   "id": "q001",
+   "category": "boxed_warning",
+   "latency_ms": 1356.000900035724,
+   "retrieved_ids": [
+    6878,
+    6918,
+    6912
+   ]
+  },
+  {
+   "id": "q002",
+   "category": "boxed_warning",
+   "latency_ms": 1238.9961000299081,
+   "retrieved_ids": [
+    7287,
+    7496,
+    7558
+   ]
+  },
+  {
+   "id": "q003",
+   "category": "boxed_warning",
+   "latency_ms": 1286.3883000100031,
+   "retrieved_ids": [
+    7922,
+    7897,
+    7935
+   ]
+  },
+  {
+   "id": "q004",
+   "category": "boxed_warning",
+   "latency_ms": 1252.4849000037648,
+   "retrieved_ids": [
+    8521,
+    8536,
+    8526
+   ]
+  },
+  {
+   "id": "q005",
+   "category": "boxed_warning",
+   "latency_ms": 1475.0694000395015,
+   "retrieved_ids": [
+    8775,
+    8787,
+    8790
+   ]
+  },
+  {
+   "id": "q006",
+   "category": "boxed_warning",
+   "latency_ms": 1370.7549999817275,
+   "retrieved_ids": [
+    9138,
+    9160,
+    9139
+   ]
+  },
+  {
+   "id": "q007",
+   "category": "contraindication",
+   "latency_ms": 1299.4701000279747,
+   "retrieved_ids": [
+    7028,
+    6943,
+    7032
+   ]
+  },
+  {
+   "id": "q008",
+   "category": "contraindication",
+   "latency_ms": 1364.7777999867685,
+   "retrieved_ids": [
+    7623,
+    7616,
+    7617
+   ]
+  },
+  {
+   "id": "q009",
+   "category": "contraindication",
+   "latency_ms": 1202.1729999687523,
+   "retrieved_ids": [
+    8257,
+    8238,
+    8174
+   ]
+  },
+  {
+   "id": "q010",
+   "category": "contraindication",
+   "latency_ms": 1323.3099000062793,
+   "retrieved_ids": [
+    8749,
+    8752,
+    8770
+   ]
+  },
+  {
+   "id": "q011",
+   "category": "contraindication",
+   "latency_ms": 1308.073200052604,
+   "retrieved_ids": [
+    7159,
+    7165,
+    7135
+   ]
+  },
+  {
+   "id": "q012",
+   "category": "contraindication",
+   "latency_ms": 1347.3922000266612,
+   "retrieved_ids": [
+    8683,
+    8674,
+    8684
+   ]
+  },
+  {
+   "id": "q013",
+   "category": "dosing",
+   "latency_ms": 1358.8163999957033,
+   "retrieved_ids": [
+    6964,
+    7002,
+    6924
+   ]
+  },
+  {
+   "id": "q014",
+   "category": "dosing",
+   "latency_ms": 1458.868000016082,
+   "retrieved_ids": [
+    7052,
+    7071,
+    7050
+   ]
+  },
+  {
+   "id": "q015",
+   "category": "dosing",
+   "latency_ms": 1366.2397000007331,
+   "retrieved_ids": [
+    7123,
+    7124,
+    7125
+   ]
+  },
+  {
+   "id": "q016",
+   "category": "dosing",
+   "latency_ms": 1952.196299971547,
+   "retrieved_ids": [
+    7792,
+    7784,
+    7780
+   ]
+  },
+  {
+   "id": "q017",
+   "category": "dosing",
+   "latency_ms": 1134.1754000168294,
+   "retrieved_ids": [
+    8635,
+    8634,
+    8636
+   ]
+  },
+  {
+   "id": "q018",
+   "category": "dosing",
+   "latency_ms": 1306.9747000117786,
+   "retrieved_ids": [
+    8989,
+    8978,
+    9002
+   ]
+  },
+  {
+   "id": "q019",
+   "category": "dosing",
+   "latency_ms": 1470.065400004387,
+   "retrieved_ids": [
+    9144,
+    9143,
+    9145
+   ]
+  },
+  {
+   "id": "q020",
+   "category": "interaction",
+   "latency_ms": 1482.8427999746054,
+   "retrieved_ids": [
+    7105,
+    7624,
+    7111
+   ]
+  },
+  {
+   "id": "q021",
+   "category": "interaction",
+   "latency_ms": 1502.4215999874286,
+   "retrieved_ids": [
+    7671,
+    7670,
+    7666
+   ]
+  },
+  {
+   "id": "q022",
+   "category": "interaction",
+   "latency_ms": 1346.6382000478916,
+   "retrieved_ids": [
+    7697,
+    7698,
+    6904
+   ]
+  },
+  {
+   "id": "q023",
+   "category": "interaction",
+   "latency_ms": 1341.9969999813475,
+   "retrieved_ids": [
+    8427,
+    8436,
+    8437
+   ]
+  },
+  {
+   "id": "q024",
+   "category": "interaction",
+   "latency_ms": 1540.489399980288,
+   "retrieved_ids": [
+    7126,
+    8905,
+    8690
+   ]
+  },
+  {
+   "id": "q025",
+   "category": "interaction",
+   "latency_ms": 1864.0850000083447,
+   "retrieved_ids": [
+    9025,
+    9028,
+    7622
+   ]
+  },
+  {
+   "id": "q026",
+   "category": "interaction",
+   "latency_ms": 1295.3388000023551,
+   "retrieved_ids": [
+    9125,
+    9118,
+    9123
+   ]
+  },
+  {
+   "id": "q027",
+   "category": "indication",
+   "latency_ms": 1329.86970001366,
+   "retrieved_ids": [
+    7004,
+    6987,
+    6959
+   ]
+  },
+  {
+   "id": "q028",
+   "category": "indication",
+   "latency_ms": 1433.1154000246897,
+   "retrieved_ids": [
+    7559,
+    7586,
+    7578
+   ]
+  },
+  {
+   "id": "q029",
+   "category": "indication",
+   "latency_ms": 1400.887900032103,
+   "retrieved_ids": [
+    7705,
+    7707,
+    7781
+   ]
+  },
+  {
+   "id": "q030",
+   "category": "indication",
+   "latency_ms": 1208.3441000431776,
+   "retrieved_ids": [
+    8358,
+    8359,
+    8362
+   ]
+  },
+  {
+   "id": "q031",
+   "category": "indication",
+   "latency_ms": 1376.4730999828316,
+   "retrieved_ids": [
+    8871,
+    8895,
+    8876
+   ]
+  },
+  {
+   "id": "q032",
+   "category": "indication",
+   "latency_ms": 1278.7708999821916,
+   "retrieved_ids": [
+    7121,
+    7122,
+    7152
+   ]
+  },
+  {
+   "id": "q033",
+   "category": "population",
+   "latency_ms": 1398.4286999912001,
+   "retrieved_ids": [
+    6989,
+    7002,
+    7006
+   ]
+  },
+  {
+   "id": "q034",
+   "category": "population",
+   "latency_ms": 1234.4962999923155,
+   "retrieved_ids": [
+    7143,
+    7198,
+    7175
+   ]
+  },
+  {
+   "id": "q035",
+   "category": "population",
+   "latency_ms": 1177.9335000319406,
+   "retrieved_ids": [
+    7486,
+    7483,
+    7487
+   ]
+  },
+  {
+   "id": "q036",
+   "category": "population",
+   "latency_ms": 1364.6678000222892,
+   "retrieved_ids": [
+    7655,
+    7626,
+    7620
+   ]
+  },
+  {
+   "id": "q037",
+   "category": "population",
+   "latency_ms": 1293.0008000112139,
+   "retrieved_ids": [
+    7891,
+    7885,
+    7890
+   ]
+  },
+  {
+   "id": "q038",
+   "category": "population",
+   "latency_ms": 1253.3034000080079,
+   "retrieved_ids": [
+    9195,
+    9198,
+    7546
+   ]
+  },
+  {
+   "id": "q039",
+   "category": "warning",
+   "latency_ms": 1409.5341000356711,
+   "retrieved_ids": [
+    7056,
+    6931,
+    7054
+   ]
+  },
+  {
+   "id": "q040",
+   "category": "warning",
+   "latency_ms": 1421.130600036122,
+   "retrieved_ids": [
+    7059,
+    7061,
+    7054
+   ]
+  },
+  {
+   "id": "q041",
+   "category": "warning",
+   "latency_ms": 1317.2316999989562,
+   "retrieved_ids": [
+    7419,
+    7418,
+    7433
+   ]
+  },
+  {
+   "id": "q042",
+   "category": "warning",
+   "latency_ms": 1280.926899984479,
+   "retrieved_ids": [
+    8508,
+    8452,
+    8516
+   ]
+  },
+  {
+   "id": "q043",
+   "category": "warning",
+   "latency_ms": 1238.1044999929145,
+   "retrieved_ids": [
+    8645,
+    8641,
+    8644
+   ]
+  },
+  {
+   "id": "q044",
+   "category": "warning",
+   "latency_ms": 1163.8318000477739,
+   "retrieved_ids": [
+    8776,
+    8787,
+    8775
+   ]
+  },
+  {
+   "id": "q045",
+   "category": "warning",
+   "latency_ms": 1293.7299000332132,
+   "retrieved_ids": [
+    8960,
+    8964,
+    8971
+   ]
+  },
+  {
+   "id": "q046",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 1450.5340000032447,
+   "retrieved_ids": [
+    7738,
+    8437,
+    7674
+   ]
+  },
+  {
+   "id": "q047",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 1312.2017999994569,
+   "retrieved_ids": [
+    7611,
+    7609,
+    7853
+   ]
+  },
+  {
+   "id": "q048",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 1402.879400004167,
+   "retrieved_ids": [
+    7053,
+    7073,
+    6894
+   ]
+  },
+  {
+   "id": "q049",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 1432.3203000240028,
+   "retrieved_ids": [
+    8915,
+    8876,
+    8956
+   ]
+  },
+  {
+   "id": "q050",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 1657.471099984832,
+   "retrieved_ids": [
+    7675,
+    7639,
+    7882
+   ]
+  },
+  {
+   "id": "q051",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 1288.8683000346646,
+   "retrieved_ids": [
+    7761,
+    7676,
+    9160
+   ]
+  },
+  {
+   "id": "q052",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 1213.3963000378571,
+   "retrieved_ids": [
+    7223,
+    8585,
+    7345
+   ]
+  },
+  {
+   "id": "q053",
+   "category": "adversarial_absent_section",
+   "latency_ms": 1365.0368000380695,
+   "retrieved_ids": [
+    6936,
+    6951,
+    6952
+   ]
+  },
+  {
+   "id": "q054",
+   "category": "adversarial_absent_section",
+   "latency_ms": 1477.2404999821447,
+   "retrieved_ids": [
+    8692,
+    8694,
+    8682
+   ]
+  },
+  {
+   "id": "q055",
+   "category": "adversarial_absent_section",
+   "latency_ms": 1176.87989998376,
+   "retrieved_ids": [
+    9190,
+    7286,
+    7282
+   ]
+  },
+  {
+   "id": "q056",
+   "category": "adversarial_absent_section",
+   "latency_ms": 1323.1989999767393,
+   "retrieved_ids": [
+    6880,
+    6879,
+    6888
+   ]
+  },
+  {
+   "id": "q057",
+   "category": "adversarial_absent_section",
+   "latency_ms": 1216.2965000024997,
+   "retrieved_ids": [
+    8660,
+    8644,
+    8632
+   ]
+  },
+  {
+   "id": "q058",
+   "category": "adversarial_absent_section",
+   "latency_ms": 1424.5661000022665,
+   "retrieved_ids": [
+    7097,
+    7106,
+    7117
+   ]
+  },
+  {
+   "id": "q059",
+   "category": "adversarial_absent_section",
+   "latency_ms": 1368.308299977798,
+   "retrieved_ids": [
+    7002,
+    6964,
+    7214
+   ]
+  },
+  {
+   "id": "q060",
+   "category": "warning",
+   "latency_ms": 1281.9177999626845,
+   "retrieved_ids": [
+    9111,
+    9098,
+    9112
+   ]
+  },
+  {
+   "id": "q061",
+   "category": "adversarial_absent_section",
+   "latency_ms": 1158.408800023608,
+   "retrieved_ids": [
+    8197,
+    8209,
+    8211
+   ]
+  }
+ ]
+}

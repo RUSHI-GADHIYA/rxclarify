@@ -17,6 +17,14 @@ htmlcov/
 data/raw/
 .fastembed_cache/
 
+# Generation-run artifacts: ~400 KB each, because they embed every retrieved
+# excerpt's full text — corpus data that already lives in Postgres. Regenerate
+# for about $0.025 with:
+#     python eval/harness.py --config hybrid --mode generate
+# The small *_retrieval.json and *_faithfulness.json files ARE committed: they
+# are the evidence behind the results table in README.md.
+eval/results/*_generate.json
+
 # Editors / OS
 .vscode/
 .idea/

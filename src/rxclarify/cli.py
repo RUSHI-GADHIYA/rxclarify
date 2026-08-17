@@ -12,8 +12,8 @@ from rich.table import Table
 from rxclarify.config import get_settings
 from rxclarify.db import connect, table_counts
 from rxclarify.generate.answer import answer_question
-from rxclarify.llm.factory import get_provider
-from rxclarify.retrieval.dense import DenseRetriever
+from rxclarify.llm.factory import PROVIDERS, get_chat_model, provider_name
+from rxclarify.retrieval.langchain_retriever import PgVectorRetriever
 
 app = typer.Typer(
     add_completion=False,
@@ -55,25 +55,26 @@ def ask(
     question: Annotated[str, typer.Argument(help="The clinical question to answer.")],
     top_k: Annotated[int | None, typer.Option("--top-k", "-k")] = None,
     provider: Annotated[
-        str | None, typer.Option("--provider", help="Override RX_LLM_PROVIDER: ollama|bedrock.")
+        str | None,
+        typer.Option("--provider", help=f"Override RX_LLM_PROVIDER: {'|'.join(PROVIDERS)}."),
     ] = None,
     show_context: Annotated[
         bool, typer.Option("--show-context", help="Print the retrieved excerpts.")
     ] = False,
 ) -> None:
     """Answer a question from the ingested labels, with citations."""
-    llm = get_provider(provider)
-
+    settings = get_settings()
     try:
+        chat_model = get_chat_model(provider)
         with connect() as conn:
             result = answer_question(
                 question,
-                retriever=DenseRetriever(conn),
-                provider=llm,
+                retriever=PgVectorRetriever(conn=conn, k=top_k or settings.top_k),
+                chat_model=chat_model,
                 top_k=top_k,
             )
     except Exception as exc:  # noqa: BLE001 - surfaced to the user, then re-raised as exit
-        _explain_failure(exc, llm.name)
+        _explain_failure(exc, provider_name(provider))
         raise typer.Exit(code=1) from exc
 
     if show_context:
@@ -108,12 +109,45 @@ def _explain_failure(exc: Exception, provider_name: str) -> None:
     """
     text = str(exc)
 
-    if "Could not resolve AWS credentials" in text:
+    if "OPENAI_API_KEY" in text or "openai_api_key" in text:
+        console.print(
+            "[bold red]No OpenAI API key found.[/]\n"
+            "Put [cyan]OPENAI_API_KEY=sk-...[/] in .env (it is gitignored), or export it "
+            "in your shell. To use AWS instead, run with [cyan]--provider bedrock[/]."
+        )
+        return
+
+    if "AuthenticationError" in type(exc).__name__ or "Incorrect API key" in text:
+        console.print(
+            "[bold red]OpenAI rejected the API key.[/]\n"
+            "Check for a stale or truncated value in .env.\n"
+            f"[dim]{text}[/]"
+        )
+        return
+
+    if "RateLimit" in type(exc).__name__ or "insufficient_quota" in text:
+        console.print(
+            "[bold red]OpenAI rate limit or quota exceeded.[/]\n"
+            "If this is a brand-new key, confirm the account has billing credit.\n"
+            f"[dim]{text}[/]"
+        )
+        return
+
+    # Parenthesised deliberately: without it, `and` binds tighter than `or` and
+    # this branch swallows Postgres's "relation ... does not exist" below.
+    if provider_name == "openai" and ("model_not_found" in text or "invalid_model" in text):
+        console.print(
+            "[bold red]OpenAI does not recognise that model.[/]\n"
+            f"Check [cyan]RX_OPENAI_MODEL[/] in .env.\n[dim]{text}[/]"
+        )
+        return
+
+    if "Could not resolve AWS credentials" in text or "NoCredentialsError" in type(exc).__name__:
         console.print(
             "[bold red]No AWS credentials found.[/]\n"
             "Set AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY / AWS_REGION in .env, and "
             "request model access for Claude Haiku 4.5 in the Bedrock console for that "
-            "region. To keep working locally instead, use [cyan]--provider ollama[/]."
+            "region. To use OpenAI instead, run with [cyan]--provider openai[/]."
         )
         return
 
@@ -123,13 +157,6 @@ def _explain_failure(exc: Exception, provider_name: str) -> None:
             "Usually one of: model access not granted for this model in this region, "
             "or the IAM identity lacks bedrock:InvokeModel.\n"
             f"[dim]{text}[/]"
-        )
-        return
-
-    if provider_name == "ollama" and ("Connection" in text or "ConnectError" in text):
-        console.print(
-            "[bold red]Cannot reach Ollama.[/]\n"
-            "Start it and make sure the model is pulled: [cyan]ollama pull qwen2.5:3b[/]"
         )
         return
 
@@ -178,9 +205,9 @@ def db_stats() -> None:
             by_section.add_row(row["section"], str(row["n"]))
         console.print(by_section)
 
-    model = settings.bedrock_model if settings.llm_provider == "bedrock" else settings.ollama_model
     console.print(
-        f"[dim]provider={settings.llm_provider}  model={model}  top_k={settings.top_k}[/]"
+        f"[dim]provider={settings.llm_provider}  model={settings.active_model}  "
+        f"top_k={settings.top_k}[/]"
     )
 
 

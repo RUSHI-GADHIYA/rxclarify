@@ -1,0 +1,632 @@
+{
+ "config": "hybrid",
+ "mode": "retrieval",
+ "top_k": 3,
+ "model": null,
+ "run_at": "2026-08-17T00:01:39+00:00",
+ "questions": 61,
+ "retrieval": {
+  "recall@3": 0.8260869565217391,
+  "mrr": 0.6557971014492754,
+  "ndcg@3": 0.6995297343944157,
+  "precision@3": 0.2753623188405797,
+  "mean_retrieved": 3.0,
+  "n": 46
+ },
+ "latency_ms": {
+  "p50": 10.79359999857843,
+  "p95": 52.40430001867935
+ },
+ "per_question": [
+  {
+   "id": "q001",
+   "category": "boxed_warning",
+   "latency_ms": 53.651300026103854,
+   "retrieved_ids": [
+    6878,
+    8972,
+    7032
+   ]
+  },
+  {
+   "id": "q002",
+   "category": "boxed_warning",
+   "latency_ms": 54.05219999374822,
+   "retrieved_ids": [
+    7287,
+    7496,
+    7358
+   ]
+  },
+  {
+   "id": "q003",
+   "category": "boxed_warning",
+   "latency_ms": 52.40430001867935,
+   "retrieved_ids": [
+    7897,
+    7922,
+    7898
+   ]
+  },
+  {
+   "id": "q004",
+   "category": "boxed_warning",
+   "latency_ms": 51.55049997847527,
+   "retrieved_ids": [
+    8521,
+    8565,
+    8528
+   ]
+  },
+  {
+   "id": "q005",
+   "category": "boxed_warning",
+   "latency_ms": 56.03289999999106,
+   "retrieved_ids": [
+    8775,
+    8787,
+    8753
+   ]
+  },
+  {
+   "id": "q006",
+   "category": "boxed_warning",
+   "latency_ms": 13.119300012476742,
+   "retrieved_ids": [
+    9138,
+    9160,
+    9139
+   ]
+  },
+  {
+   "id": "q007",
+   "category": "contraindication",
+   "latency_ms": 10.764700011350214,
+   "retrieved_ids": [
+    7033,
+    7032,
+    6943
+   ]
+  },
+  {
+   "id": "q008",
+   "category": "contraindication",
+   "latency_ms": 12.12120003765449,
+   "retrieved_ids": [
+    7623,
+    7616,
+    7624
+   ]
+  },
+  {
+   "id": "q009",
+   "category": "contraindication",
+   "latency_ms": 11.330900015309453,
+   "retrieved_ids": [
+    8238,
+    8257,
+    8263
+   ]
+  },
+  {
+   "id": "q010",
+   "category": "contraindication",
+   "latency_ms": 10.989399976097047,
+   "retrieved_ids": [
+    8751,
+    8752,
+    8736
+   ]
+  },
+  {
+   "id": "q011",
+   "category": "contraindication",
+   "latency_ms": 11.4851999678649,
+   "retrieved_ids": [
+    7159,
+    7165,
+    7164
+   ]
+  },
+  {
+   "id": "q012",
+   "category": "contraindication",
+   "latency_ms": 10.79359999857843,
+   "retrieved_ids": [
+    8684,
+    8674,
+    8683
+   ]
+  },
+  {
+   "id": "q013",
+   "category": "dosing",
+   "latency_ms": 11.61429996136576,
+   "retrieved_ids": [
+    6986,
+    6964,
+    6963
+   ]
+  },
+  {
+   "id": "q014",
+   "category": "dosing",
+   "latency_ms": 10.30449999962002,
+   "retrieved_ids": [
+    7052,
+    7050,
+    7071
+   ]
+  },
+  {
+   "id": "q015",
+   "category": "dosing",
+   "latency_ms": 12.948899995535612,
+   "retrieved_ids": [
+    7123,
+    7124,
+    7125
+   ]
+  },
+  {
+   "id": "q016",
+   "category": "dosing",
+   "latency_ms": 9.753199992701411,
+   "retrieved_ids": [
+    7786,
+    7784,
+    7792
+   ]
+  },
+  {
+   "id": "q017",
+   "category": "dosing",
+   "latency_ms": 11.219200037885457,
+   "retrieved_ids": [
+    8634,
+    8637,
+    8635
+   ]
+  },
+  {
+   "id": "q018",
+   "category": "dosing",
+   "latency_ms": 11.369700019713491,
+   "retrieved_ids": [
+    8989,
+    9002,
+    8975
+   ]
+  },
+  {
+   "id": "q019",
+   "category": "dosing",
+   "latency_ms": 11.396200046874583,
+   "retrieved_ids": [
+    9143,
+    9144,
+    9145
+   ]
+  },
+  {
+   "id": "q020",
+   "category": "interaction",
+   "latency_ms": 10.509999992791563,
+   "retrieved_ids": [
+    7097,
+    7079,
+    7105
+   ]
+  },
+  {
+   "id": "q021",
+   "category": "interaction",
+   "latency_ms": 10.464399994816631,
+   "retrieved_ids": [
+    7671,
+    7670,
+    7139
+   ]
+  },
+  {
+   "id": "q022",
+   "category": "interaction",
+   "latency_ms": 9.777400002349168,
+   "retrieved_ids": [
+    7697,
+    7698,
+    6904
+   ]
+  },
+  {
+   "id": "q023",
+   "category": "interaction",
+   "latency_ms": 11.563700041733682,
+   "retrieved_ids": [
+    8427,
+    8416,
+    8452
+   ]
+  },
+  {
+   "id": "q024",
+   "category": "interaction",
+   "latency_ms": 10.752600035630167,
+   "retrieved_ids": [
+    8905,
+    8901,
+    7131
+   ]
+  },
+  {
+   "id": "q025",
+   "category": "interaction",
+   "latency_ms": 10.850300022866577,
+   "retrieved_ids": [
+    9025,
+    7677,
+    9028
+   ]
+  },
+  {
+   "id": "q026",
+   "category": "interaction",
+   "latency_ms": 9.235200006514788,
+   "retrieved_ids": [
+    9125,
+    9123,
+    9112
+   ]
+  },
+  {
+   "id": "q027",
+   "category": "indication",
+   "latency_ms": 12.194500013720244,
+   "retrieved_ids": [
+    6960,
+    6965,
+    6959
+   ]
+  },
+  {
+   "id": "q028",
+   "category": "indication",
+   "latency_ms": 10.437199962325394,
+   "retrieved_ids": [
+    7560,
+    7559,
+    7569
+   ]
+  },
+  {
+   "id": "q029",
+   "category": "indication",
+   "latency_ms": 11.36389997554943,
+   "retrieved_ids": [
+    7705,
+    7707,
+    7708
+   ]
+  },
+  {
+   "id": "q030",
+   "category": "indication",
+   "latency_ms": 9.701200004201382,
+   "retrieved_ids": [
+    8358,
+    8359,
+    8385
+   ]
+  },
+  {
+   "id": "q031",
+   "category": "indication",
+   "latency_ms": 11.209200019948184,
+   "retrieved_ids": [
+    8895,
+    8871,
+    8876
+   ]
+  },
+  {
+   "id": "q032",
+   "category": "indication",
+   "latency_ms": 8.967000001575798,
+   "retrieved_ids": [
+    7121,
+    7122,
+    7131
+   ]
+  },
+  {
+   "id": "q033",
+   "category": "population",
+   "latency_ms": 10.050300043076277,
+   "retrieved_ids": [
+    7007,
+    6989,
+    7002
+   ]
+  },
+  {
+   "id": "q034",
+   "category": "population",
+   "latency_ms": 10.755499999504536,
+   "retrieved_ids": [
+    7143,
+    7175,
+    7144
+   ]
+  },
+  {
+   "id": "q035",
+   "category": "population",
+   "latency_ms": 11.025299958419055,
+   "retrieved_ids": [
+    7487,
+    7483,
+    7486
+   ]
+  },
+  {
+   "id": "q036",
+   "category": "population",
+   "latency_ms": 10.555299988482147,
+   "retrieved_ids": [
+    7655,
+    7624,
+    7626
+   ]
+  },
+  {
+   "id": "q037",
+   "category": "population",
+   "latency_ms": 10.418799996841699,
+   "retrieved_ids": [
+    7891,
+    7885,
+    7890
+   ]
+  },
+  {
+   "id": "q038",
+   "category": "population",
+   "latency_ms": 11.371499975211918,
+   "retrieved_ids": [
+    9198,
+    9195,
+    7347
+   ]
+  },
+  {
+   "id": "q039",
+   "category": "warning",
+   "latency_ms": 11.031399946659803,
+   "retrieved_ids": [
+    7056,
+    6931,
+    6926
+   ]
+  },
+  {
+   "id": "q040",
+   "category": "warning",
+   "latency_ms": 10.414700023829937,
+   "retrieved_ids": [
+    7054,
+    7059,
+    8070
+   ]
+  },
+  {
+   "id": "q041",
+   "category": "warning",
+   "latency_ms": 11.361800017766654,
+   "retrieved_ids": [
+    7419,
+    7432,
+    8338
+   ]
+  },
+  {
+   "id": "q042",
+   "category": "warning",
+   "latency_ms": 10.45999996131286,
+   "retrieved_ids": [
+    8508,
+    8498,
+    8516
+   ]
+  },
+  {
+   "id": "q043",
+   "category": "warning",
+   "latency_ms": 9.161000023595989,
+   "retrieved_ids": [
+    8645,
+    8641,
+    8648
+   ]
+  },
+  {
+   "id": "q044",
+   "category": "warning",
+   "latency_ms": 10.798799979966134,
+   "retrieved_ids": [
+    8787,
+    8775,
+    8804
+   ]
+  },
+  {
+   "id": "q045",
+   "category": "warning",
+   "latency_ms": 11.140800022985786,
+   "retrieved_ids": [
+    8960,
+    8964,
+    8956
+   ]
+  },
+  {
+   "id": "q046",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 9.53710003523156,
+   "retrieved_ids": [
+    7638,
+    8945,
+    7675
+   ]
+  },
+  {
+   "id": "q047",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 11.924999998882413,
+   "retrieved_ids": [
+    7707,
+    7684,
+    7611
+   ]
+  },
+  {
+   "id": "q048",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 12.250099971424788,
+   "retrieved_ids": [
+    7053,
+    8055,
+    7073
+   ]
+  },
+  {
+   "id": "q049",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 10.122700012288988,
+   "retrieved_ids": [
+    8956,
+    8957,
+    8915
+   ]
+  },
+  {
+   "id": "q050",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 10.516700043808669,
+   "retrieved_ids": [
+    7882,
+    7639,
+    7675
+   ]
+  },
+  {
+   "id": "q051",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 11.760100023820996,
+   "retrieved_ids": [
+    9072,
+    7873,
+    7676
+   ]
+  },
+  {
+   "id": "q052",
+   "category": "adversarial_absent_drug",
+   "latency_ms": 9.827100031543523,
+   "retrieved_ids": [
+    7345,
+    9132,
+    7175
+   ]
+  },
+  {
+   "id": "q053",
+   "category": "adversarial_absent_section",
+   "latency_ms": 10.360099957324564,
+   "retrieved_ids": [
+    6930,
+    6933,
+    6931
+   ]
+  },
+  {
+   "id": "q054",
+   "category": "adversarial_absent_section",
+   "latency_ms": 9.413100022356957,
+   "retrieved_ids": [
+    8690,
+    8692,
+    8688
+   ]
+  },
+  {
+   "id": "q055",
+   "category": "adversarial_absent_section",
+   "latency_ms": 9.518700011540204,
+   "retrieved_ids": [
+    7236,
+    7261,
+    7278
+   ]
+  },
+  {
+   "id": "q056",
+   "category": "adversarial_absent_section",
+   "latency_ms": 9.874599985778332,
+   "retrieved_ids": [
+    6888,
+    8767,
+    6887
+   ]
+  },
+  {
+   "id": "q057",
+   "category": "adversarial_absent_section",
+   "latency_ms": 8.762999961618334,
+   "retrieved_ids": [
+    7316,
+    8637,
+    8635
+   ]
+  },
+  {
+   "id": "q058",
+   "category": "adversarial_absent_section",
+   "latency_ms": 9.73559997510165,
+   "retrieved_ids": [
+    7091,
+    7090,
+    7103
+   ]
+  },
+  {
+   "id": "q059",
+   "category": "adversarial_absent_section",
+   "latency_ms": 11.522000015247613,
+   "retrieved_ids": [
+    7002,
+    6986,
+    7003
+   ]
+  },
+  {
+   "id": "q060",
+   "category": "warning",
+   "latency_ms": 9.120100003201514,
+   "retrieved_ids": [
+    9112,
+    9098,
+    9111
+   ]
+  },
+  {
+   "id": "q061",
+   "category": "adversarial_absent_section",
+   "latency_ms": 10.01849997555837,
+   "retrieved_ids": [
+    8166,
+    8167,
+    8211
+   ]
+  }
+ ]
+}

@@ -1,18 +1,25 @@
 """The grounding contract: answer only from context, cite, or refuse.
 
-This prompt is the thing Phase 3's faithfulness numbers are measured against,
-so it is kept in one place and versioned deliberately. Phase 3 hardens it with
-a Bedrock contextual-grounding guardrail; the refusal path exists here from the
-start so we can measure the unguarded baseline first.
+This prompt is what Phase 3's faithfulness numbers are measured against, so it
+lives in one place and is versioned deliberately.
+
+Note on templating: retrieved label text is injected as a *template variable*,
+never formatted into the template string. Label text contains braces (dose
+tables, chemical notation), and formatting it into the template would make
+ChatPromptTemplate try to interpret them as variables.
 """
 
 from __future__ import annotations
+
+from langchain_core.prompts import ChatPromptTemplate
 
 from rxclarify.retrieval.base import RetrievedChunk
 
 REFUSAL_TOKEN = "INSUFFICIENT_EVIDENCE"
 
-PROMPT_VERSION = "p1-grounded-v1"
+PROMPT_VERSION = "p2-lcel-v1"
+
+NO_CONTEXT_SENTINEL = "(no excerpts were retrieved)"
 
 SYSTEM_PROMPT = f"""\
 You are a drug-information assistant for licensed pharmacy staff. You answer \
@@ -34,23 +41,25 @@ support with citations, then state plainly which part is unsupported.
 the answer depends on the individual patient, say so.
 """
 
+USER_TEMPLATE = "CONTEXT:\n{context}\n\nQUESTION: {question}"
+
+
+def build_prompt() -> ChatPromptTemplate:
+    return ChatPromptTemplate.from_messages([("system", SYSTEM_PROMPT), ("human", USER_TEMPLATE)])
+
 
 def format_context(chunks: list[RetrievedChunk]) -> str:
+    """Render retrieved chunks as numbered, citable blocks.
+
+    On empty retrieval this returns a sentinel rather than an empty string, so
+    the model still sees a well-formed CONTEXT section and produces the normal
+    refusal shape instead of a free-form apology.
+    """
+    if not chunks:
+        return NO_CONTEXT_SENTINEL
+
     blocks = []
     for chunk in chunks:
         header = f"[{chunk.citation}] {chunk.drug} — {chunk.section}"
         blocks.append(f"{header}\n{chunk.text}")
     return "\n\n---\n\n".join(blocks)
-
-
-def build_user_prompt(question: str, chunks: list[RetrievedChunk]) -> str:
-    if not chunks:
-        # Keep the contract identical on the empty-retrieval path so the model
-        # produces the same refusal shape rather than a free-form apology.
-        return (
-            "CONTEXT:\n(no excerpts were retrieved)\n\n"
-            f"QUESTION: {question}\n\n"
-            f"Reply with exactly `{REFUSAL_TOKEN}` and one sentence explaining why."
-        )
-
-    return f"CONTEXT:\n{format_context(chunks)}\n\nQUESTION: {question}"

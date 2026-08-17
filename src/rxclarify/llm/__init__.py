@@ -1,6 +1,5 @@
-"""LLM providers behind one protocol, so generation and eval can swap freely."""
+"""LangChain chat models, one per provider, selected by configuration."""
 
-from rxclarify.llm.base import Completion, LLMProvider
-from rxclarify.llm.factory import get_provider
+from rxclarify.llm.factory import PROVIDERS, get_chat_model, provider_name
 
-__all__ = ["Completion", "LLMProvider", "get_provider"]
+__all__ = ["PROVIDERS", "get_chat_model", "provider_name"]

@@ -8,9 +8,12 @@ version = "0.1.0"
 description = "Grounded RAG assistant over public FDA drug labels, with citations and an insufficient-evidence refusal path."
 requires-python = ">=3.11"
 dependencies = [
-    "anthropic[bedrock]>=0.69",
     "fastembed>=0.8",
+    "gradio>=6.24",
     "httpx>=0.27",
+    "langchain-aws>=1.7",
+    "langchain-core>=1.5",
+    "langchain-openai>=1.5",
     "psycopg[binary]>=3.2",
     "pydantic>=2.9",
     "pydantic-settings>=2.5",
@@ -39,6 +42,9 @@ addopts = "-q"
 [tool.ruff]
 line-length = 100
 src = ["src", "tests"]
+# app.py lives at the repo root, so name it explicitly — `ruff check src tests`
+# would otherwise skip the project's main entry point.
+extend-include = ["app.py"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]

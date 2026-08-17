@@ -1,9 +1,22 @@
-"""Generation-path tests. No network, no database, no real model."""
+"""Generation-path tests.
+
+These drive the real LCEL chain — real retriever interface, real
+ChatPromptTemplate, real citation validation — with only the chat model faked.
+No network, no database, no API key.
+"""
+
+import pytest
+from langchain_core.documents import Document
+from langchain_core.language_models.fake_chat_models import GenericFakeChatModel
+from langchain_core.messages import AIMessage
+from langchain_core.retrievers import BaseRetriever
+from pydantic import ConfigDict
 
 from rxclarify.generate.answer import Answer, answer_question, is_refusal, parse_citations
-from rxclarify.generate.prompt import REFUSAL_TOKEN, build_user_prompt
-from rxclarify.llm.base import Completion
+from rxclarify.generate.chain import build_chain
+from rxclarify.generate.prompt import NO_CONTEXT_SENTINEL, REFUSAL_TOKEN, build_prompt
 from rxclarify.retrieval.base import RetrievedChunk
+from rxclarify.retrieval.langchain_retriever import to_document
 
 
 def _chunk(marker: int, text: str = "text") -> RetrievedChunk:
@@ -18,26 +31,27 @@ def _chunk(marker: int, text: str = "text") -> RetrievedChunk:
     )
 
 
-class FakeRetriever:
-    def __init__(self, chunks: list[RetrievedChunk]) -> None:
-        self.chunks = chunks
-        self.calls: list[tuple[str, int]] = []
+class FakeRetriever(BaseRetriever):
+    model_config = ConfigDict(arbitrary_types_allowed=True)
 
-    def retrieve(self, query: str, *, top_k: int) -> list[RetrievedChunk]:
-        self.calls.append((query, top_k))
-        return self.chunks[:top_k]
+    chunks: list = []
+    k: int = 6
+
+    def _get_relevant_documents(self, query, *, run_manager) -> list[Document]:
+        return [to_document(c) for c in self.chunks[: self.k]]
 
 
-class FakeProvider:
-    name = "fake"
+def _model(text: str) -> GenericFakeChatModel:
+    return GenericFakeChatModel(messages=iter([AIMessage(content=text)]))
 
-    def __init__(self, text: str) -> None:
-        self.text = text
-        self.last_user_prompt: str | None = None
 
-    def complete(self, *, system: str, user: str, max_tokens: int) -> Completion:
-        self.last_user_prompt = user
-        return Completion(text=self.text, model="fake-1", input_tokens=10, output_tokens=5)
+def _run(model_text: str, chunks: list[RetrievedChunk], **kwargs) -> Answer:
+    return answer_question(
+        "q",
+        retriever=FakeRetriever(chunks=chunks),
+        chat_model=_model(model_text),
+        **kwargs,
+    )
 
 
 def test_parse_citations_splits_valid_from_invalid():
@@ -57,22 +71,15 @@ def test_is_refusal_detects_the_token():
 
 
 def test_answer_question_flags_hallucinated_citation():
-    retriever = FakeRetriever([_chunk(1), _chunk(2)])
-    provider = FakeProvider("Avoid the combination [C1][C9].")
-
-    result = answer_question("q", retriever=retriever, provider=provider, top_k=2)
+    result = _run("Avoid the combination [C1][C9].", [_chunk(1), _chunk(2)])
 
     assert result.cited_markers == [1]
     assert result.invalid_markers == [9]
     assert not result.refused
-    assert result.model == "fake-1"
 
 
 def test_answer_question_marks_refusal():
-    retriever = FakeRetriever([_chunk(1)])
-    provider = FakeProvider(f"{REFUSAL_TOKEN}\nThe excerpts do not cover pediatric dosing.")
-
-    result = answer_question("q", retriever=retriever, provider=provider, top_k=1)
+    result = _run(f"{REFUSAL_TOKEN}\nThe excerpts do not cover pediatric dosing.", [_chunk(1)])
 
     assert result.refused
     assert result.cited_markers == []
@@ -81,10 +88,7 @@ def test_answer_question_marks_refusal():
 
 
 def test_uncited_flags_a_non_refusal_answer_with_no_citations():
-    retriever = FakeRetriever([_chunk(1)])
-    provider = FakeProvider("Warfarin interacts with many drugs.")
-
-    result = answer_question("q", retriever=retriever, provider=provider, top_k=1)
+    result = _run("Warfarin interacts with many drugs.", [_chunk(1)])
 
     assert result.uncited
     assert result.invalid_markers == []
@@ -96,24 +100,52 @@ def test_cited_chunks_resolves_markers_back_to_chunks():
     assert [c.text for c in answer.cited_chunks()] == ["second"]
 
 
-def test_top_k_is_passed_through_to_the_retriever():
-    retriever = FakeRetriever([_chunk(i) for i in range(1, 6)])
-    provider = FakeProvider("[C1]")
-
-    answer_question("q", retriever=retriever, provider=provider, top_k=3)
-
-    assert retriever.calls == [("q", 3)]
+def test_top_k_limits_the_documents_reaching_the_model():
+    result = _run("[C1]", [_chunk(i) for i in range(1, 6)], top_k=3)
+    assert len(result.chunks) == 3
 
 
-def test_empty_retrieval_still_demands_the_refusal_shape():
-    prompt = build_user_prompt("q", [])
-    assert REFUSAL_TOKEN in prompt
-    assert "no excerpts were retrieved" in prompt
+def test_usage_metadata_is_carried_onto_the_answer():
+    """Token counts drive the cost-per-query metric, so the chain must not drop them."""
+    message = AIMessage(
+        content="Yes [C1].",
+        usage_metadata={"input_tokens": 1200, "output_tokens": 42, "total_tokens": 1242},
+    )
+    result = answer_question(
+        "q",
+        retriever=FakeRetriever(chunks=[_chunk(1)]),
+        chat_model=GenericFakeChatModel(messages=iter([message])),
+    )
+    assert result.input_tokens == 1200
+    assert result.output_tokens == 42
+    assert result.latency_ms is not None
 
 
-def test_context_blocks_are_numbered_for_citation():
-    prompt = build_user_prompt("Any interaction?", [_chunk(1, "alpha"), _chunk(2, "beta")])
-    assert "[C1] Coumadin — drug_interactions" in prompt
-    assert "[C2] Coumadin — drug_interactions" in prompt
-    assert "alpha" in prompt and "beta" in prompt
-    assert prompt.rstrip().endswith("QUESTION: Any interaction?")
+def test_chain_returns_docs_alongside_the_message():
+    """Citation validation needs the exact excerpts the model was shown."""
+    chain = build_chain(FakeRetriever(chunks=[_chunk(1)]), _model("[C1]"))
+    out = chain.invoke("does it interact?")
+
+    assert sorted(out) == ["docs", "message", "question"]
+    assert out["question"] == "does it interact?"
+    assert out["docs"][0].metadata["marker"] == 1
+
+
+def test_empty_retrieval_still_produces_a_well_formed_prompt():
+    rendered = build_prompt().format(context=NO_CONTEXT_SENTINEL, question="q")
+    assert NO_CONTEXT_SENTINEL in rendered
+    assert REFUSAL_TOKEN in rendered
+
+
+def test_empty_retrieval_is_handled_end_to_end():
+    result = _run(f"{REFUSAL_TOKEN} nothing retrieved.", [])
+    assert result.refused
+    assert result.chunks == []
+
+
+@pytest.mark.parametrize("hostile", ["{context}", "dose {1-2} mg", "}{"])
+def test_label_text_with_braces_is_not_treated_as_a_template_variable(hostile):
+    """SPL dose tables contain braces; they must never be interpolated."""
+    chain = build_chain(FakeRetriever(chunks=[_chunk(1, hostile)]), _model("[C1]"))
+    out = chain.invoke("q")
+    assert out["docs"][0].page_content == hostile
